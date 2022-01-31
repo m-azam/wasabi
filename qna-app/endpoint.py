@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from services import question_generator, convert_pdf2text, update_user_data
+from services import question_generator, convert_pdf2text, update_user_data, issue_vc
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 from services import signup_login_service
@@ -72,7 +72,9 @@ async def getPdfQnA(req: pdf_qna_request):
 @app.post("/authentication/register", status_code=200)
 async def register(req: register_login):
     if signup_login_service.signup_service(req.uname, req.password) == 1:
-        return {"status": "Registration successful", "signup_status_flag": 1}
+        resp = issue_vc.issue_token_api()
+        qr_code = resp['qrCode']
+        return {"status": "Registration successful", "signup_status_flag": 1, "qr_code":qr_code}
     else:
         return {"status": "Registration unsuccessful! Username may already exist", "signup_status_flag": 0}
 
