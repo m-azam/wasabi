@@ -5,3 +5,5 @@ fastapi==0.61.2
 uvicorn==0.12.2
 pydantic==1.7.2
 pdfminer~=20191125
+msal>=1.13.0
+pycparser>=2.19
