@@ -47,4 +47,6 @@ if __name__ == '__main__':
             of the solution that is dissolved in the solvent\
             (usually present in lesser quantity) is called\
             the solute."
-    get_qna(text)
+    ques = get_qna(text)
+    for qi in ques:
+        print()
