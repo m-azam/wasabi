@@ -5,15 +5,11 @@
         "clientName": "wasabi"
     },
     "callback": {
-        "url": "http://ca50-149-164-110-192.ngrok.io/callback",
+        "url": "http://f7ba-2601-806-4280-70e0-7131-e221-1e3a-f0e5.ngrok.io/callback",
         "state": ""
     },
     "issuance": {
         "type": "WasabiVerifiedCredential",
-        "pin": {
-            "value": "3539",
-            "length": 4
-        },
         "manifest": "https://beta.did.msidentity.com/v1.0/1c5ffd4f-6cec-4ad2-954f-5e7eedb10095/verifiableCredential/contracts/WasabiVerifiedCredential",
         "claims": {
             "studentId": ""

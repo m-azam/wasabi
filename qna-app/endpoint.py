@@ -41,7 +41,7 @@ class callback_request(BaseModel):
 class register_login(BaseModel):
     uname: str
     password: str
-
+    student_id: Optional[str]
 
 class update_user_score(BaseModel):
     uname: str
@@ -71,10 +71,10 @@ async def getPdfQnA(req: pdf_qna_request):
 
 @app.post("/authentication/register", status_code=200)
 async def register(req: register_login):
-    if signup_login_service.signup_service(req.uname, req.password) == 1:
-        resp = issue_vc.issue_token_api()
+    if signup_login_service.signup_service(req.uname, req.password, req.student_id) == 1:
+        resp = issue_vc.issue_token_api(req.student_id)
         qr_code = resp['qrCode']
-        return {"status": "Registration successful", "signup_status_flag": 1, "qr_code":qr_code}
+        return {"status": "Registration successful", "signup_status_flag": 1, "qr_code": qr_code}
     else:
         return {"status": "Registration unsuccessful! Username may already exist", "signup_status_flag": 0}
 

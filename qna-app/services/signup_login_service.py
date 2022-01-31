@@ -2,11 +2,11 @@ import hashlib
 import csv
 from datetime import date
 import pandas as pd
+from services import update_user_data
+column_names = ['username', 'password', 'score', 'score_date', 'student_id']
 
-column_names = ['username', 'password', 'score', 'score_date', 'school_id']
 
-
-def signup_service(uname, password):
+def signup_service(uname, password, student_id):
     pass_id = hashlib.sha256(password.encode())
     df = pd.read_csv('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/userbase.csv', names=column_names)
     usernames = df['username']
@@ -18,6 +18,7 @@ def signup_service(uname, password):
     with open('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/userbase.csv', 'a') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(row_entry)
+    update_user_data.update_schoolid(uname, student_id)
     return 1
 
 
