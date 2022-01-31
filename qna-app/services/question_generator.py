@@ -1,5 +1,8 @@
+import csv
+
 from question_generation import pipelines
 import logging
+import pandas as pd
 
 qna_nlp = pipelines.pipeline("question-generation")
 e2e_nlp = pipelines.pipeline("e2e-qg")
@@ -26,6 +29,8 @@ def get_qna(text):
     return questions
 
 
+
+
 def get_multi_para_qna(paragraph, qna_list):
     dataList = qna_nlp(paragraph)
     for index in range(len(dataList)):
@@ -39,14 +44,15 @@ def e2e_questions(text):
 
 
 if __name__ == '__main__':
-    text = "A solution has a solvent and a solute as its\
-            components. The component of the solution\
-            that dissolves the other component in it\
-            (usually the component present in larger\
-            amount) is called the solvent. The component\
-            of the solution that is dissolved in the solvent\
-            (usually present in lesser quantity) is called\
-            the solute."
-    ques = get_qna(text)
-    for qi in ques:
-        print()
+    # text = "A solution has a solvent and a solute as its\
+    #         components. The component of the solution\
+    #         that dissolves the other component in it\
+    #         (usually the component present in larger\
+    #         amount) is called the solvent. The component\
+    #         of the solution that is dissolved in the solvent\
+    #         (usually present in lesser quantity) is called\
+    #         the solute."
+    # ques = get_qna(text)
+    update_score('azam', '200')
+
+

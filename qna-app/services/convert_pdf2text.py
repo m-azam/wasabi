@@ -71,8 +71,6 @@ def remove_last_line(paragraph):
 
 if __name__ == '__main__':
     path = '/home/userd672/Documents/non-work/HackerEarth-hackathon/pdf/3.pdf'
-
-    # path = decode_base64(base64)
     paras = get_paras(path)
     print(paras)
     print(len(paras))
