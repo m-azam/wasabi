@@ -34,6 +34,10 @@ class pdf_qna_request(BaseModel):
     base64encoded: str
 
 
+class callback_request(BaseModel):
+    text: str
+
+
 class register_login(BaseModel):
     uname: str
     password: str
@@ -105,3 +109,8 @@ async def update_score(req: update_user_score):
         return {"status": "update successful"}
     else:
         return {"status": "username does not exist"}
+
+
+@app.post("/callback")
+async def callback(req: callback_request):
+    print(req.text)

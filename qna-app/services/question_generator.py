@@ -44,15 +44,14 @@ def e2e_questions(text):
 
 
 if __name__ == '__main__':
-    # text = "A solution has a solvent and a solute as its\
-    #         components. The component of the solution\
-    #         that dissolves the other component in it\
-    #         (usually the component present in larger\
-    #         amount) is called the solvent. The component\
-    #         of the solution that is dissolved in the solvent\
-    #         (usually present in lesser quantity) is called\
-    #         the solute."
-    # ques = get_qna(text)
-    update_score('azam', '200')
+    text = "A solution has a solvent and a solute as its\
+            components. The component of the solution\
+            that dissolves the other component in it\
+            (usually the component present in larger\
+            amount) is called the solvent. The component\
+            of the solution that is dissolved in the solvent\
+            (usually present in lesser quantity) is called\
+            the solute."
+    ques = get_qna(text)
 
 
