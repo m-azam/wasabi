@@ -1,0 +1,21 @@
+{
+    "authority": "did:ion:EiC940w9X63QIfntiVXelvwjVtE3EGWeTu-RnXbaG_CHbg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfZjFmNGMyZTUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiSzMzaDZFRHpvLVA4RS00NkFxM29xRERza29kc2JvWW1uSzhUTWJiZlVDZyIsInkiOiIwMUFJcHBoeWRIVUI3d1Q0bnJxVjk2WnlfampQOFRpS2pxeG9ZbU9ibFBnIn0sInB1cnBvc2VzIjpbImF1dGhlbnRpY2F0aW9uIiwiYXNzZXJ0aW9uTWV0aG9kIl0sInR5cGUiOiJFY2RzYVNlY3AyNTZrMVZlcmlmaWNhdGlvbktleTIwMTkifV0sInNlcnZpY2VzIjpbeyJpZCI6ImxpbmtlZGRvbWFpbnMiLCJzZXJ2aWNlRW5kcG9pbnQiOnsib3JpZ2lucyI6WyJodHRwczovL2NvbnRvc28uY29tLyJdfSwidHlwZSI6IkxpbmtlZERvbWFpbnMifSx7ImlkIjoiaHViIiwic2VydmljZUVuZHBvaW50Ijp7Imluc3RhbmNlcyI6WyJodHRwczovL2JldGEuaHViLm1zaWRlbnRpdHkuY29tL3YxLjAvMWM1ZmZkNGYtNmNlYy00YWQyLTk1NGYtNWU3ZWVkYjEwMDk1Il19LCJ0eXBlIjoiSWRlbnRpdHlIdWIifV19fV0sInVwZGF0ZUNvbW1pdG1lbnQiOiJFaURuZHdxbHVsRE9SeEduZkhjYmJlMnNzejZ2MXdob3d5anRrNUVKU2xlel93In0sInN1ZmZpeERhdGEiOnsiZGVsdGFIYXNoIjoiRWlEMHpWbFRzMXd6U0t4S2pOa2ItX1ZVWTlqS09BNFNscmE0U1A0aEJDN3poQSIsInJlY292ZXJ5Q29tbWl0bWVudCI6IkVpQkJfeVpnc041dkpXLUtWckVYcV9uM2k4TFZlLVFUb2dxcmlvdkY2SmVlVGcifX0",
+    "includeQRCode": true,
+    "registration": {
+      "clientName": "wasabi",
+      "purpose": "To transmit revision score"
+    },
+    "callback": {
+      "url": "http://f7ba-2601-806-4280-70e0-7131-e221-1e3a-f0e5.ngrok.io/callback",
+    },
+    "presentation": {
+      "includeReceipt": true,
+      "requestedCredentials": [
+        {
+          "type": "WasabiVerifiedCredential",
+          "purpose": "To transmit revision score",
+          "acceptedIssuers": [ "did:ion:EiC940w9X63QIfntiVXelvwjVtE3EGWeTu-RnXbaG_CHbg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJzaWdfZjFmNGMyZTUiLCJwdWJsaWNLZXlKd2siOnsiY3J2Ijoic2VjcDI1NmsxIiwia3R5IjoiRUMiLCJ4IjoiSzMzaDZFRHpvLVA4RS00NkFxM29xRERza29kc2JvWW1uSzhUTWJiZlVDZyIsInkiOiIwMUFJcHBoeWRIVUI3d1Q0bnJxVjk2WnlfampQOFRpS2pxeG9ZbU9ibFBnIn0sInB1cnBvc2VzIjpbImF1dGhlbnRpY2F0aW9uIiwiYXNzZXJ0aW9uTWV0aG9kIl0sInR5cGUiOiJFY2RzYVNlY3AyNTZrMVZlcmlmaWNhdGlvbktleTIwMTkifV0sInNlcnZpY2VzIjpbeyJpZCI6ImxpbmtlZGRvbWFpbnMiLCJzZXJ2aWNlRW5kcG9pbnQiOnsib3JpZ2lucyI6WyJodHRwczovL2NvbnRvc28uY29tLyJdfSwidHlwZSI6IkxpbmtlZERvbWFpbnMifSx7ImlkIjoiaHViIiwic2VydmljZUVuZHBvaW50Ijp7Imluc3RhbmNlcyI6WyJodHRwczovL2JldGEuaHViLm1zaWRlbnRpdHkuY29tL3YxLjAvMWM1ZmZkNGYtNmNlYy00YWQyLTk1NGYtNWU3ZWVkYjEwMDk1Il19LCJ0eXBlIjoiSWRlbnRpdHlIdWIifV19fV0sInVwZGF0ZUNvbW1pdG1lbnQiOiJFaURuZHdxbHVsRE9SeEduZkhjYmJlMnNzejZ2MXdob3d5anRrNUVKU2xlel93In0sInN1ZmZpeERhdGEiOnsiZGVsdGFIYXNoIjoiRWlEMHpWbFRzMXd6U0t4S2pOa2ItX1ZVWTlqS09BNFNscmE0U1A0aEJDN3poQSIsInJlY292ZXJ5Q29tbWl0bWVudCI6IkVpQkJfeVpnc041dkpXLUtWckVYcV9uM2k4TFZlLVFUb2dxcmlvdkY2SmVlVGcifX0" ]
+        }
+      ]
+    }
+  }
