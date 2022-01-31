@@ -29,6 +29,9 @@ class text_qna_request(BaseModel):
 class pdf_qna_request(BaseModel):
     base64encoded: str
 
+class callback_request(BaseModel):
+    text: str
+
 
 @app.post("/qna/getqna/text")
 async def getTextQnA(req: text_qna_request):
@@ -47,3 +50,7 @@ async def getPdfQnA(req: pdf_qna_request):
     for paragraph in paragraphs:
         question_generator.get_multi_para_qna(paragraph, qna_list)
     return qna_list
+
+@app.post("/callback")
+async def callback(req: callback_request):
+    print(req.text)
