@@ -54,3 +54,20 @@ def update_schoolid(uname, school_id):
         for row in data:
             w.writerow(row)
     return 1
+
+
+def store_student_id(student_id):
+    df = pd.read_csv('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/userbase.csv')
+    ids = df.iloc[:, -1]
+    list = ids.tolist()
+    idx = list.index(student_id)
+    with open('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/userbase.csv') as f:
+        data = [row for row in csv.reader(f)]
+    score = data[idx+1][2]
+    row_entry = [student_id, score]
+    with open('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/university.csv', 'a') as f:
+        w = csv.writer(f)
+        w.writerow(row_entry)
+
+if __name__ == '__main__':
+    store_student_id("xgh1234566")
