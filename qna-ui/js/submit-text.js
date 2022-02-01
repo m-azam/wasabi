@@ -106,6 +106,25 @@ function evaulate() {
     }
     var header = document.getElementById('card-eval-header');
     header.innerHTML += correctCount + " out of " + questionList.length + " correctly";
+
+    var data = JSON.stringify({
+        "uname": localStorage.getItem(username),
+        "score": correctCount
+      });
+      
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+      
+      xhr.addEventListener("readystatechange", function() {
+        if(this.readyState === 4) {
+          console.log(this.responseText);
+        }
+      });
+      
+      xhr.open("POST", "http://127.0.0.1:6025/update/score");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      
+      xhr.send(data);
 }
 
 function getCorrectAnswerTemplate(question, answer) {

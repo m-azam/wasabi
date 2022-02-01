@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/school.css">
+    <script src="js/login.js"></script>
+    <title>microsoft azure university</title>
+</head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".login").click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        });
+    });
+    $("#show-marks-form").submit(function (e) {
+        e.preventDefault();
+    });
+</script>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <label id="score"></label>
+            <img height="300" width="300" id="qr_issue_code">
+
+            <button class="login" onclick="verifyLogin()">Verify</button>
+            <button onclick="getScore()">Submit Score</button>
+        </div>
+      </div>
+</body>
+
+</html>
