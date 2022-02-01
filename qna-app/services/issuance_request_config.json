@@ -5,7 +5,7 @@
         "clientName": "wasabi"
     },
     "callback": {
-        "url": "http://f7ba-2601-806-4280-70e0-7131-e221-1e3a-f0e5.ngrok.io/callback",
+        "url": "https://b649-149-164-110-192.ngrok.io/callback",
         "state": ""
     },
     "issuance": {

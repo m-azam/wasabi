@@ -1,11 +1,13 @@
-from fastapi import FastAPI
-from pydantic import BaseModel, Field
-from services import question_generator, convert_pdf2text, update_user_data, issue_vc
+import json
+
+from fastapi import FastAPI, Request
+from pydantic import BaseModel, create_model
+from services import question_generator, convert_pdf2text, update_user_data, issue_vc, verify_vc
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 from services import signup_login_service
-from typing import Optional
-
+from typing import Optional, Dict, Any
+import pandas as pd
 app = FastAPI()
 
 origins = [
@@ -34,14 +36,27 @@ class pdf_qna_request(BaseModel):
     base64encoded: str
 
 
+class Receipt(BaseModel):
+    studentId: str
+
+
 class callback_request(BaseModel):
-    text: str
+    code: str
+    requestId: Optional[str]
+    state: Optional[str]
+    subject: Optional[str]
+    receipt: Receipt = None
 
 
 class register_login(BaseModel):
     uname: str
     password: str
     student_id: Optional[str]
+
+
+class verify_request(BaseModel):
+    text: str
+
 
 class update_user_score(BaseModel):
     uname: str
@@ -113,6 +128,24 @@ async def update_score(req: update_user_score):
         return {"status": "username does not exist"}
 
 
+@app.get("/verify", status_code=200)
+async def verify():
+    resp = verify_vc.verify_vc()
+    qr_code = resp['qrCode']
+    return {"qr_code": qr_code}
+
+
 @app.post("/callback")
-async def callback(req: callback_request):
-    print(req.text)
+def callback(req: Dict[Any, Any]):
+    if req['issuers'] is not None:
+        student_id = req['issuers'][0]['claims']['studentId']
+        update_user_data.store_student_id(student_id)
+
+
+@app.get("/get_score", status_code=200)
+async def return_score():
+    df = pd.read_csv('/Users/sachinvm/Desktop/CS Study/MsftHack/wasabi/qna-app/services/university.csv')
+    ids = df.iloc[:, -1]
+    list = ids.tolist()
+    print(list[-1])
+    return list[-1]
